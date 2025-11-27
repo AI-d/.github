@@ -45,7 +45,8 @@
 | **프로젝트명**    | **trAIn (트레인)** — *Train + AI. AI와 함께하는 커뮤니케이션 능력 향상 여정*         |
 | **플랫폼명**     | **Dialogym (다이얼로짐)** — *Dialogue + Gym. 대화 근육을 단련하는 훈련 공간*    |
 | **버전**       | v1.0.0 (MVP)                                                                   |
-| **개발 기간** | 2025.09.29 ~ 2025.11.03 (5주)                                                 |
+| **개발 기간** | 2025.09.29 ~ 2025.11.03 (5주) |
+| **Jira** | [프로젝트 보드](https://wtj199814.atlassian.net/jira/software/projects/TRAIN/summary) (Epic 5개, 이슈 80개) |
 | **프로덕션 URL** | **Frontend**: https://dialogym.shop<br>**Backend API**: https://api.dialogym.shop |
 | **로컬 개발 URL** | **Frontend**: http://localhost:5050<br>**Backend**: http://localhost:9090 |
 
@@ -258,7 +259,7 @@ Dialogym은 "대화도 훈련이 필요하다"는 철학을 기반으로, 현대
 
 **협업 도구**
 - Discord (실시간 커뮤니케이션), Jira (이슈 추적), GitHub (코드 리뷰)
-- Swagger (API 자동 문서화), GitHub Docs Repo(105여 개의 기술 문서)
+- Swagger (API 자동 문서화), GitHub Docs Repo(100개 이상의 기술 문서)
 
 > 팀 구성 및 역할 상세 정보: [Team Roles 문서](https://github.com/AI-d/Dialogym-docs/blob/dev/docs/team/team-roles.md)
 
