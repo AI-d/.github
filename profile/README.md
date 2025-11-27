@@ -15,6 +15,8 @@
   [![Frontend](https://img.shields.io/badge/Frontend-dialogym.shop-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://dialogym.shop)
   [![API](https://img.shields.io/badge/API-api.dialogym.shop-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)](https://api.dialogym.shop)
   [![Docs](https://img.shields.io/badge/API_Docs-Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)](https://api.dialogym.shop/swagger-ui.html)
+  [![Jira](https://img.shields.io/badge/Jira-Project_Board-0052CC?style=for-the-badge&logo=jira&logoColor=white)](https://wtj199814.atlassian.net/jira/software/projects/TRAIN/summary)
+  [![GitHub](https://img.shields.io/badge/GitHub-AI--d-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AI-d)
 
 </div>
 
