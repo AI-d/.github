@@ -1,15 +1,22 @@
-# Dialogym
+<div align="center">
+  <img src="./Dialogym_logo_symbol_bg_removal.png" alt="Dialogym Logo" width="200"/>
 
-> Team AId의 trAIn 프로젝트 - AI 기반 대화 훈련 플랫폼
+  # Dialogym
 
-<h1 align="center">Dialogym : AI 기반 대화 훈련 플랫폼</h1>
+  ### AI 기반 대화 훈련 플랫폼
 
-<p align="center"><b>Dialogym - 대화도 훈련이 필요하다</b></p>
-<p align="center">AI와 함께하는 실시간 음성 대화 훈련 플랫폼 — 헬스장에서 근육을 단련하듯, 대화 능력을 체계적으로 훈련합니다.</p>
+  **Dialogym - 대화도 훈련이 필요하다**
 
-<p align="center">
-  <b>TEAM</b> AId
-</p>
+  AI와 함께하는 실시간 음성 대화 훈련 플랫폼
+  헬스장에서 근육을 단련하듯, 대화 능력을 체계적으로 훈련합니다.
+
+  **TEAM AId**
+
+  [![Frontend](https://img.shields.io/badge/Frontend-dialogym.shop-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://dialogym.shop)
+  [![API](https://img.shields.io/badge/API-api.dialogym.shop-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)](https://api.dialogym.shop)
+  [![Docs](https://img.shields.io/badge/API_Docs-Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)](https://api.dialogym.shop/swagger-ui.html)
+
+</div>
 
 ---
 
@@ -230,17 +237,30 @@ Dialogym은 "대화도 훈련이 필요하다"는 철학을 기반으로, 현대
 
 | 역할 | 이름 | GitHub | 주요 담당 기능 |
 | -- | -- | ------ | ------------- |
-| PO / Tech Lead / PM | 왕택준 | [@TJK98](https://github.com/TJK98) | **Backend**: JWT 인증, OAuth2 소셜 로그인 (Google/Kakao/Naver), 이메일 인증, 약관 관리, AI 피드백 생성 (전체 대화 평가 + 문장별 분석 + 개선안 3개), 피드백 히스토리 및 성장 통계<br>**Frontend**: 웰컴, 회원가입, 로그인, 이메일 인증, 피드백, 마이 페이지<br>**Docs**: 프로젝트 문서 관리, Discord/Jira/GitHub 워크플로우 관리 |
-| 공동 SM / Fullstack | 김경민 | [@minee0505](https://github.com/minee0505) | **Backend**: WebSocket 실시간 통신, 세션 관리 및 동시성 제어, Ephemeral Key 발급, STT 데이터 DB 저장 및 대화 히스토리 관리<br>**Frontend**: 시나리오 선택 화면, 커스텀 시나리오 생성 화면<br>**Infra**: AWS 배포 아키텍처 설계 및 구축, Docker 컨테이너화, Nginx 리버스 프록시, HTTPS 인증서, CI/CD (GitHub Actions), S3+CloudFront 프론트엔드 배포 |
-| 공동 SM / Fullstack | 진도희 | [@dohee-jin](https://github.com/dohee-jin) | **Backend**: 시나리오 생성/조회/삭제 API, Ephemeral Key 발급 컨트롤러, WebSocket 핸들러, 실시간 음성 분석 (WPM, 추임새)<br>**Frontend**: AI 대화 화면, 시나리오 선택 화면, 커스텀 시나리오 생성 화면, GPT Realtime API WebRTC 연결, 음성 전송 제어, 실시간 STT 데이터 WebSocket 전송, 실시간 피드백 UI<br>**Docs**: 회의록 작성 |
+| **PO / Tech Lead / PM** | **왕택준** | [@TJK98](https://github.com/TJK98) | **Backend (인증/보안/AI)**: Spring Security + JWT 인증 시스템, OAuth2 소셜 로그인 (Google/Kakao/Naver), Refresh Token Rotation (RTR), Rate Limiting (Bucket4j), 이메일 인증 (JWT+OTP 이중 검증), 약관 관리, Spring AI + GPT-4 기반 AI 피드백 생성 (전체 대화 평가 + 문장별 분석 + 3가지 스타일 개선안), 피드백 히스토리 및 성장 통계, 데이터 정리 스케줄러<br>**Frontend (인증/피드백)**: 웰컴 페이지, 회원가입/로그인, 이메일 인증, 소셜 로그인 콜백, 피드백 결과 화면, 마이 페이지, Zustand 상태 관리, Axios Interceptor (토큰 갱신 자동화)<br>**Docs & PM**: 100개 이상의 문서 작성 (요구사항/설계/의사결정/팀/프로세스/회의/트러블슈팅), Git 브랜치 전략, PR 템플릿, 코딩 컨벤션, Jira 이슈 관리, 주 2회 정기 회의 주도 |
+| **공동 SM / Fullstack** | **김경민** | [@minee0505](https://github.com/minee0505) | **Backend (실시간 통신/세션)**: WebSocket 실시간 통신 (Signaling/Audio/Feedback Handler), DialogueSession 생성 및 상태 관리, 세션 동시성 제어, Transcript 엔티티 및 STT 데이터 DB 저장, 대화 히스토리 관리, Ephemeral Key 발급 API<br>**Frontend (시나리오)**: 시나리오 선택 화면 (ScenarioListPage), 커스텀 시나리오 생성 화면 (CreateScenarioPage), scenarioStore 상태 관리<br>**Infra & DevOps**: AWS 배포 아키텍처 설계 및 구축 (EC2/S3/CloudFront/RDS/Route 53), Docker + Docker Compose 컨테이너화, Nginx 리버스 프록시 및 SSL 종료, Let's Encrypt 인증서 자동 갱신, GitHub Actions CI/CD 파이프라인 구축 (Backend/Frontend 자동 배포) |
+| **공동 SM / Fullstack** | **진도희** | [@dohee-jin](https://github.com/dohee-jin) | **Backend (시나리오/분석)**: 시나리오 CRUD API (생성/조회/삭제), 6개 기본 시나리오 초기화, Ephemeral Key 발급 컨트롤러, WebSocket 핸들러 (실시간 메시지 처리), 실시간 음성 분석 (발화 속도 WPM 계산, 추임새 감지 알고리즘)<br>**Frontend (대화/WebRTC)**: AI 대화 화면 (DialoguePage), 시나리오 선택/생성 화면, GPT-4o Realtime API WebRTC P2P 연결 (useRealtimeSession 훅), getUserMedia 마이크 권한, 음성 데이터 전송 제어, 실시간 STT 데이터 WebSocket 전송, VAD (Voice Activity Detection), 실시간 피드백 UI, audio-processor.js 음성 처리, sessionStore 상태 관리<br>**Docs**: 회의록 작성 및 관리 |
 
 ### 팀 특징
 
-- **3인 풀스택 팀**: 모든 팀원이 Backend와 Frontend를 함께 담당
-- **체계적인 협업**: 팀장이 문서 관리 및 워크플로우 총괄, Discord/Jira로 일일 스크럼
-- **End-to-End 개발**: 각자 맡은 기능의 백엔드부터 프론트엔드까지 완성
+**3인 풀스택 팀 - End-to-End 개발**
+- 모든 팀원이 Backend와 Frontend를 함께 담당하여 기능별 완전한 구현
+- 왕택준: 인증/보안 시스템 + AI 피드백 + 프로젝트 관리 + 문서화
+- 김경민: 실시간 통신 + 세션 관리 + 인프라/DevOps
+- 진도희: 시나리오 관리 + WebRTC 음성 통신 + 실시간 분석
 
-> Team AId의 팀 구성 및 역할은 [상세 문서](https://github.com/AI-d/Dialogym-docs/blob/dev/docs/team/team-roles.md)에서 더 자세히 확인할 수 있습니다.
+**체계적인 협업 문화**
+- 애자일 방식: 5주 5개 스프린트, 주 2회 정기 회의 (총 18회)
+- 문서화: 105개 마크다운 문서로 모든 의사결정 과정 기록
+- 코드 리뷰: PR 100개 이상 리뷰, 최소 1명 승인 필수
+- 이슈 관리: Jira Epic-Story-Task 구조화, 50개 이상 Task 추적
+- Git Flow: main(배포) - dev(통합) - feature(기능) 브랜치 전략
+
+**협업 도구**
+- Discord (실시간 커뮤니케이션), Jira (이슈 추적), GitHub (코드 리뷰)
+- Swagger (API 자동 문서화), GitHub Docs Repo(105여 개의 기술 문서)
+
+> 팀 구성 및 역할 상세 정보: [Team Roles 문서](https://github.com/AI-d/Dialogym-docs/blob/dev/docs/team/team-roles.md)
 
 ---
 
@@ -267,9 +287,11 @@ Dialogym은 "대화도 훈련이 필요하다"는 철학을 기반으로, 현대
 | **언어** | ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black) |
 | **프레임워크** | ![React](https://img.shields.io/badge/React-19.1.1-61DAFB?logo=react&logoColor=black) |
 | **빌드 도구** | ![Vite](https://img.shields.io/badge/Vite-7.1.11-646CFF?logo=vite&logoColor=white) |
-| **상태 관리** | ![Zustand](https://img.shields.io/badge/Zustand-5.0.8-000000?logo=react&logoColor=white) |
-| **스타일링** | ![SASS](https://img.shields.io/badge/SASS-1.92.1-CC6699?logo=sass&logoColor=white) |
-| **통신** | ![Axios](https://img.shields.io/badge/Axios-1.12.2-5A29E4?logo=axios&logoColor=white) |
+| **라우팅** | ![React Router](https://img.shields.io/badge/React%20Router-7.9.4-CA4245?logo=reactrouter&logoColor=white) |
+| **상태 관리** | ![Zustand](https://img.shields.io/badge/Zustand-5.0.8-000000?logo=react&logoColor=white) ![Immer](https://img.shields.io/badge/Immer-10.2.0-00E7C3) |
+| **스타일링** | ![SASS](https://img.shields.io/badge/SASS-1.92.1-CC6699?logo=sass&logoColor=white) ![SCSS Modules](https://img.shields.io/badge/SCSS%20Modules-CC6699?logo=sass&logoColor=white) |
+| **UI 라이브러리** | ![Ant Design](https://img.shields.io/badge/Ant%20Design-5.27.4-0170FE?logo=antdesign&logoColor=white) |
+| **통신** | ![Axios](https://img.shields.io/badge/Axios-1.12.2-5A29E4?logo=axios&logoColor=white) ![WebSocket](https://img.shields.io/badge/WebSocket-010101?logo=socketdotio&logoColor=white) |
 | **음성** | ![WebRTC](https://img.shields.io/badge/WebRTC-333333?logo=webrtc&logoColor=white) |
 | **AI** | ![OpenAI](https://img.shields.io/badge/OpenAI-4.104.0-412991?logo=openai&logoColor=white) |
 
@@ -284,7 +306,9 @@ Dialogym은 "대화도 훈련이 필요하다"는 철학을 기반으로, 현대
 | **데이터베이스** | ![MariaDB](https://img.shields.io/badge/MariaDB-10.x-003545?logo=mariadb&logoColor=white) |
 | **캐시** | ![Caffeine](https://img.shields.io/badge/Caffeine-3.1.8-00897B) |
 | **인증** | ![JWT](https://img.shields.io/badge/JWT-0.12.3-000000?logo=jsonwebtokens&logoColor=white) |
-| **보안** | ![Spring Security](https://img.shields.io/badge/Spring%20Security-6DB33F?logo=springsecurity&logoColor=white) |
+| **보안** | ![Spring Security](https://img.shields.io/badge/Spring%20Security-6DB33F?logo=springsecurity&logoColor=white) ![OAuth2](https://img.shields.io/badge/OAuth2-EB5424?logo=auth0&logoColor=white) |
+| **Rate Limiting** | ![Bucket4j](https://img.shields.io/badge/Bucket4j-8.10.1-FF6B6B) |
+| **빌드 도구** | ![Gradle](https://img.shields.io/badge/Gradle-8.x-02303A?logo=gradle&logoColor=white) |
 
 ### AI 및 음성 처리
 
@@ -320,10 +344,12 @@ Dialogym은 "대화도 훈련이 필요하다"는 철학을 기반으로, 현대
 | 구분 | 기술 |
 |------|------|
 | **API 문서** | ![Swagger](https://img.shields.io/badge/Swagger-85EA2D?logo=swagger&logoColor=black) ![SpringDoc](https://img.shields.io/badge/SpringDoc%20OpenAPI-2.8.13-6DB33F) |
+| **API 테스트** | ![Postman](https://img.shields.io/badge/Postman-FF6C37?logo=postman&logoColor=white) |
 | **테스트** | ![JUnit5](https://img.shields.io/badge/JUnit5-25A162?logo=junit5&logoColor=white) ![Mockito](https://img.shields.io/badge/Mockito-000000) ![Vitest](https://img.shields.io/badge/Vitest-4.0.3-6E9F18?logo=vitest&logoColor=white) |
 | **E2E 테스트** | ![Playwright](https://img.shields.io/badge/Playwright-1.56.1-2EAD33?logo=playwright&logoColor=white) |
 | **컴포넌트 개발** | ![Storybook](https://img.shields.io/badge/Storybook-9.1.15-FF4785?logo=storybook&logoColor=white) |
 | **린팅** | ![ESLint](https://img.shields.io/badge/ESLint-9.33.0-4B32C3?logo=eslint&logoColor=white) |
+| **코드 품질** | ![Lombok](https://img.shields.io/badge/Lombok-BC4521?logo=lombok&logoColor=white) ![p6spy](https://img.shields.io/badge/p6spy-1.9.1-4479A1) |
 
 ---
 
@@ -691,6 +717,24 @@ Frontend: 피드백 화면 표시
 
 ---
 
+## 주요 성과
+
+### 기술적 성과
+- **실시간 음성 대화**: GPT-4o Realtime API + WebRTC P2P 연결로 저지연 음성 통신 구현
+- **보안 강화**: JWT + Refresh Token Rotation (RTR) + Rate Limiting으로 3중 보안 체계 구축
+- **AI 피드백**: Spring AI + GPT-4로 대화 분석 및 점수화 (발화 속도, 추임새, 공손도, 명료성)
+- **확장 가능한 아키텍처**: 3-Tier 아키텍처 + 도메인 주도 설계로 유지보수성 확보
+- **자동화**: GitHub Actions CI/CD + Docker로 배포 자동화
+
+### 프로젝트 성과
+- **개발 기간**: 5주 (2025.09.29 ~ 2025.11.03)
+- **문서화**: 100개 이상의 문서 작성 (요구사항, 설계, 의사결정, 팀, 프로세스, 회의, 트러블슈팅)
+- **API**: 25개 이상 RESTful API 엔드포인트 설계 및 구현
+- **코드 품질**: JavaDoc 주석, Swagger 자동 문서화, 코드 리뷰 문화 정착
+- **배포**: AWS 프로덕션 환경 구축 및 HTTPS 적용
+
+---
+
 ## 라이선스 및 문의
 
 Copyright (c) 2025 AId Team. All Rights Reserved.
@@ -699,15 +743,17 @@ Copyright (c) 2025 AId Team. All Rights Reserved.
 
 ### 팀
 
-AId Team
-- 왕택준 (PO / Tech Lead/ Fullstack)
-- 김경민 (공동 SM / Fullstack)
-- 진도희 (공동 SM / Fullstack)
+**AId Team**
+- 왕택준 ([@TJK98](https://github.com/TJK98)) - PO / Tech Lead / PM / Fullstack / Docs
+- 김경민 ([@minee0505](https://github.com/minee0505)) - 공동 SM / Fullstack / Infra
+- 진도희 ([@dohee-jin](https://github.com/dohee-jin)) - 공동 SM / Fullstack
 
 ### 문의
 
-- Email: dialogym.official@gmail.com
-- GitHub: [Dialogym Organization](https://github.com/AI-d)
+- **Email**: dialogym.official@gmail.com
+- **GitHub**: [Dialogym Organization](https://github.com/AI-d)
+- **Frontend**: https://dialogym.shop
+- **API Docs**: https://api.dialogym.shop/swagger-ui.html
 
 ---
 
